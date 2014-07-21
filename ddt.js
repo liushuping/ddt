@@ -24,7 +24,7 @@ function testCase(caseName, inputs, outputs, transform, validate) {
         var name = composeCaseName(caseName, index, inputs, outputs);
         it(name, function() {
             var result = transform(input);
-            assert.ok(validate(result, outputs[index]));
+            assert.ok(validate(outputs[index], result));
         });
     });
 }
