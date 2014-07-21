@@ -2,7 +2,7 @@ ddt
 ===
 A Data Driven Test library for node.js
 
-This module iterates a list of input test data, for each data, create a test case by transforming the data and validating the generated result with expected data in the output list.
+This module iterates a list of input test data and for each data creates a test case by transforming the data and validating the generated result with expected data in the output list.
 ## API
 Require the `ddt` module and call `test` method against a `config` object.
 ```javascript
@@ -15,42 +15,46 @@ mocha test.js
 ```
 **option**
 
-* inputs: an array of test case inputs
-* outputs: an array of expected test results
-* transform(input): a function for trasforming an input test case data, this is the function to be tested, parameter `input` is the input test case data.
-* validate(expected, actual): a function for validating transformed data (from input) to expected value which is from `outputs` array. 
-* groupName: a string value representing the group name for all the test cases. If the value is not specified, then all the test cases will be not grouped.
-* caseName: could be a string or a function. If it s string value, each test case will will nameed with it; if it is a function, the test case name will be generated from calling of it. The function accepts 3 parameters: `index`, `inputs` and `outputs` for helping generating name based on actual test case.
+* `inputs`: an array of test case inputs
+* `outputs`: an array of expected test results
+* `transform(input)`: a function for trasforming an input test case data, this is the function to be tested, parameter `input` is the input test case data.
+* `validate(expected, actual)`: a function for validating transformed data (from input) to expected value which is from `outputs` array. 
+* `groupName`: a string value representing the group name for all the test cases. If the value is not specified, then all the test cases will be not grouped.
+* `caseName`: could be a string or a function. If it s string value, each test case will will nameed with it; if it is a function, the test case name will be generated from calling of it. The function accepts 3 parameters: `index`, `inputs` and `outputs` for helping generating name based on actual test case.
+
 ## Example
 Suppose have 6 test cases, each test case has an integer input number and the expected value is the double of the input number. So, the 6 input test cases are `[1, 2, 3, 4, 5, 6]` and the exptected outputs are `[2, 4, 6, 8, 10, 12]`
 ```javascript
 var ddt = require('ddt');
 var config = {
-  inputs: [1, 2, 3, 4, 5, 6],
-  outputs: [2, 4, 6, 8, 10, 12],
-  trasform: function(input) {
-    return 2 * input;
-  },
-  validate: function(expected, actual) {
-    return expected == actual;
-  },
-  groupName: 'group test',
-  caseName: function(index, inputs, outputs) {
-    return 'Doubling of number ' + inputs[index] + ' should return ' + outputs[index];
-  }
+    inputs: [1, 2, 3, 4, 5, 6],
+    outputs: [2, 4, 6, 8, 10, 12],
+    trasform: function(input) {
+        return 2 * input;
+    },
+    validate: function(expected, actual) {
+        return expected == actual;
+    },
+    groupName: 'group test',
+    caseName: function(index, inputs, outputs) {
+        return 'Doubling of number ' + inputs[index] + ' should return ' + outputs[index];
+    }
 };
 
 ddt.test(config);
 
 save the file as `test.js` then use `mocha` to run the tests
+
 ```
 mocha test.js --reporter spec
 ```
+
 ## Test
 Make sure `mocha` is installed globally
 ```
 npm install mocha -g
 ```
+
 Run `npm test` to run unit test
 
 ## License
