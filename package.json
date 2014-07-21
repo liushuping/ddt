@@ -1,0 +1,27 @@
+{
+  "name": "ddt",
+  "version": "0.0.1",
+  "description": "A Data Driven Test library for node.js",
+  "main": "ddt.js",
+  "scripts": {
+    "test": "mocha ./test/ddt-test.js --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liushuping/ddt.git"
+  },
+  "keywords": [
+    "data",
+    "driven",
+    "unit",
+    "test",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Shuping LIU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liushuping/ddt/issues"
+  },
+  "homepage": "https://github.com/liushuping/ddt"
+}
