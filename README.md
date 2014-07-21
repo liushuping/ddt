@@ -13,7 +13,7 @@ save the file e.g. `test.js` and then execute the test with `mocha`
 ```
 mocha test.js
 ```
-**option**
+**config**
 
 * `inputs`: an array of test case inputs.
 * `outputs`: an array of expected test results.

@@ -1,6 +1,6 @@
 {
   "name": "ddt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Data Driven Test library for node.js",
   "main": "ddt.js",
   "scripts": {
