@@ -51,7 +51,7 @@ mocha test.js --reporter spec
 ```
 The test result is:
 ```
- Doulbe of a number
+ Double of a number
     ✓ Doubling of number 1 should return 2 
     ✓ Doubling of number 2 should return 4 
     ✓ Doubling of number 3 should return 6 
