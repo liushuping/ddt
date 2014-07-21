@@ -42,8 +42,9 @@ var config = {
 };
 
 ddt.test(config);
+```
 
-save the file as `test.js` then use `mocha` to run the tests
+Save the file as `test.js` then use `mocha` to run the tests
 
 ```
 mocha test.js --reporter spec
