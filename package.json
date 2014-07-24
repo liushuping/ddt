@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/liushuping/ddt/issues"
   },
-  "homepage": "https://github.com/liushuping/ddt"
+  "homepage": "https://github.com/liushuping/ddt",
+  "devDependencies": {
+    "mocha": "*"
+  }
 }
