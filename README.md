@@ -2,7 +2,7 @@ ddt
 ===
 A Data Driven Test library for node.js
 
-[![build status]://travis-ci.org/liushuping/ddt.svg)](https://travis-ci.org/liushuping/ddt.svg)
+[![build status](https://travis-ci.org/liushuping/ddt.svg)](https://travis-ci.org/liushuping/ddt.svg)
 
 This module iterates a list of input test data and for each data creates a test case by transforming the data and validating the generated result with expected data in the output list.
 ## API
