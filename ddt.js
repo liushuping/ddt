@@ -5,7 +5,7 @@ function test(config) {
     var inputs = config.inputs;
     var outputs = config.outputs;
     var transform = config.transform;
-    var validate = config.validate;
+    var validate = config.validate || defaultValidate;
     var groupName = config.groupName;
     var caseName = config.caseName;
 
@@ -38,6 +38,10 @@ function composeCaseName(caseName, index, inputs, outputs) {
     } else if (caseName instanceof Function) {
         return caseName(index, inputs, outputs);
     }
+}
+
+function defaultValidate(expected, actual) {
+    return expected == actual;
 }
 
 exports.test = test;
