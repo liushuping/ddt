@@ -26,5 +26,8 @@
   "homepage": "https://github.com/liushuping/ddt",
   "devDependencies": {
     "mocha": "*"
+  },
+  "dependencies": {
+    "oftype": "0.0.1"
   }
 }

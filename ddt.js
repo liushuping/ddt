@@ -1,4 +1,5 @@
 var assert = require('assert');
+var oftype = require('oftype');
 
 function test(config) {
     var inputs = config.inputs;
@@ -32,7 +33,7 @@ function testCase(caseName, inputs, outputs, transform, validate) {
 function composeCaseName(caseName, index, inputs, outputs) {
     if (!caseName) {
         return 'test case #' + index;
-    } else if(toString.call(caseName) == '[object String]') {
+    } else if(oftype(caseName, String)) {
         return caseName;
     } else if (caseName instanceof Function) {
         return caseName(index, inputs, outputs);
