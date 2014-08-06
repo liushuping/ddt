@@ -9,7 +9,7 @@ function test(config) {
     var groupName = config.groupName;
     var caseName = config.caseName;
 
-    if (inputs && outputs && transform && validate) {
+    if (inputs && outputs && transform) {
         if (!groupName) {
             testCase(caseName, inputs, outputs, transform, validate);
         } else {
