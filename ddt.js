@@ -11,13 +11,33 @@ function test(config) {
 
     if (inputs && outputs && transform) {
         if (!groupName) {
+	    setup(config);
             testCase(caseName, inputs, outputs, transform, validate);
         } else {
             describe(groupName, function() {
+	    	setup(config);
                 testCase(caseName, inputs, outputs, transform, validate);
             });
         }
     };
+}
+
+function setup(config) {
+    if (oftype(config.before, Function)) {
+	before(config.before);
+    }
+
+    if (oftype(config.after, Function)) {
+	after(config.after);
+    }
+
+    if (oftype(config.beforeEach, Function)) {
+	beforeEach(config.beforeEach);
+    }
+
+    if (oftype(config.afterEach, Function)) {
+	afterEach(config.afterEach);
+    }
 }
 
 function testCase(caseName, inputs, outputs, transform, validate) {
